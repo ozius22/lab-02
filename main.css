@@ -1,0 +1,98 @@
+:root {
+    --text-color: #7A8450;
+    --link-color: #6B6943;
+    --background-color: #F7EFDA;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    scroll-behavior: smooth;
+}
+
+@font-face {
+    font-family: 'Monserrat';
+    src: url(Montserrat-VariableFont_wght.ttf);
+}
+
+body {
+    font-family: 'Monserrat', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+/*Nav*/
+
+.header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding: 18px 70px;
+    background: rgba(247, 239, 218, 0.8);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+.logo {
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+.logo:hover {
+    transform: scale(1.1);
+}
+.navigation a{
+    font-size: 18.8px;
+    color: var(--text-color);
+    margin-left: 37px;
+    font-weight: 700;
+    transition: 0.3s ease-in-out;
+    border-bottom: 3px solid transparent;
+}
+.navigation a:hover {
+    color: var(--link-color);
+    border-bottom: 3px solid var(--link-color);
+}
+
+section {
+    min-height: 700px;
+}
+
+.home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    flex-direction: column;
+}
+
+.herointro img {
+    transition: filter 0.4s ease-in-out, transform 0.4s ease-in-out;
+}
+
+/* Apply the glow effect on hover */
+.herointro img:hover {
+    /* Parameters: X-offset, Y-offset, Blur-radius, Color */
+    filter: drop-shadow(0 0 15px #7A8450) drop-shadow(0 0 30px rgba(122, 132, 80, 0.5));
+    transform: scale(1.02); /* Optional: slight zoom for extra effect */
+}
+
+.btn {
+    font-size: 24px;
+    display: inline-block;
+    padding: 12px 28px;
+    background-color: var(--text-color);
+    color: var(--background-color);
+    border-radius: 30px;
+    font-weight: 700;
+    transition: 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
