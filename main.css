@@ -12,9 +12,19 @@
     scroll-behavior: smooth;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 @font-face {
     font-family: 'Monserrat';
-    src: url(Montserrat-VariableFont_wght.ttf);
+    src: url(Fonts/Montserrat-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: 'MagicRetro';
+    src: url(Fonts/MagicRetro.ttf);
 }
 
 body {
@@ -60,28 +70,27 @@ body {
 
 section {
     min-height: 700px;
+    padding: 0px 70px;
 }
 
-.home {
+/* Hero */
+
+#home {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 2rem;
     flex-direction: column;
+    min-height: auto;
 }
-
 .herointro img {
+    margin-top: 143px;
     transition: filter 0.4s ease-in-out, transform 0.4s ease-in-out;
 }
-
-/* Apply the glow effect on hover */
 .herointro img:hover {
-    /* Parameters: X-offset, Y-offset, Blur-radius, Color */
-    filter: drop-shadow(0 0 15px #7A8450) drop-shadow(0 0 30px rgba(122, 132, 80, 0.5));
-    transform: scale(1.02); /* Optional: slight zoom for extra effect */
+    transform: scale(1.02); 
 }
-
 .btn {
+    margin-top: 50px;
     font-size: 24px;
     display: inline-block;
     padding: 12px 28px;
@@ -90,9 +99,56 @@ section {
     border-radius: 30px;
     font-weight: 700;
     transition: 0.3s ease;
+    border: 3px solid var(--text-color);
 }
-
 .btn:hover {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    border-color: var(--text-color);
     transform: translateY(-3px);
     box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.section-divider {
+    margin-top: 115px;
+    width: 100%;
+    line-height: 0;        /* Removes the tiny gap at the bottom */
+    background-color: var(--background-color); /* Match Hero background */
+    display: flex;
+    justify-content: center; /* Keeps it centered if not full-width */
+}
+
+.section-divider img {
+    display: block;    
+    height: auto;
+}
+
+/*About Me*/
+
+#aboutme {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 84px;
+}
+
+.aboutmetitle {
+    margin-top: 0; 
+    font-family: 'MagicRetro';
+    font-size: 60.93px;
+    align-items: start;
+}
+
+.about-content {
+    display: flex;
+    flex-direction: row; 
+    align-items: center;
+    justify-content: center;
+    gap: 50px;          
+    width: 100%;
+    margin-top: 40px;   
+}
+
+.portrait {      /* Adjust size as needed */
+    height: auto;
 }
