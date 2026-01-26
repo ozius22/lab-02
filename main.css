@@ -12,11 +12,6 @@
     scroll-behavior: smooth;
 }
 
-img {
-    max-width: 100%;
-    height: auto;
-}
-
 @font-face {
     font-family: 'Monserrat';
     src: url(Fonts/Montserrat-VariableFont_wght.ttf);
@@ -68,23 +63,30 @@ body {
     border-bottom: 3px solid var(--link-color);
 }
 
-section {
-    min-height: 700px;
-    padding: 0px 70px;
-}
-
 /* Hero */
 
 #home {
+    background: url(Images/Home.svg);
+    background-size: cover;       
+    background-position: center;  
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    
     display: flex;
     align-items: center;
-    justify-content: center;
     flex-direction: column;
-    min-height: auto;
+    
+    height: calc(100vh - 84px); 
+    margin-top: 84px; 
+    
+    padding: 0 70px;
+
+    max-width: 100%;
 }
 .herointro img {
-    margin-top: 143px;
-    transition: filter 0.4s ease-in-out, transform 0.4s ease-in-out;
+    margin-top: 59px; 
+    max-width: 100%;
+    height: auto;
 }
 .herointro img:hover {
     transform: scale(1.02); 
@@ -107,48 +109,4 @@ section {
     border-color: var(--text-color);
     transform: translateY(-3px);
     box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-}
-
-.section-divider {
-    margin-top: 115px;
-    width: 100%;
-    line-height: 0;        /* Removes the tiny gap at the bottom */
-    background-color: var(--background-color); /* Match Hero background */
-    display: flex;
-    justify-content: center; /* Keeps it centered if not full-width */
-}
-
-.section-divider img {
-    display: block;    
-    height: auto;
-}
-
-/*About Me*/
-
-#aboutme {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 84px;
-}
-
-.aboutmetitle {
-    margin-top: 0; 
-    font-family: 'MagicRetro';
-    font-size: 60.93px;
-    align-items: start;
-}
-
-.about-content {
-    display: flex;
-    flex-direction: row; 
-    align-items: center;
-    justify-content: center;
-    gap: 50px;          
-    width: 100%;
-    margin-top: 40px;   
-}
-
-.portrait {
-    height: auto;
 }
