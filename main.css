@@ -1,0 +1,235 @@
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Poppins:wght@300;400;500;600;700;800&display=swap");
+
+/* ------ Website Theme Styling ------ */
+:root {
+    --hue-1: 220;
+    --hue-2: 270;
+    --bg-color: hsl(var(--hue-1), 100%, 97%);
+    --main-color-1: hsl(var(--hue-1), 100%, 60%);
+    --main-color-dark-1: hsl(var(--hue-1), 69%, 50%);
+    --main-color-2: hsl(var(--hue-2), 100%, 61%);
+    --heading-color: hsl(var(--hue-1), 61%, 24%);
+    --text-color: hsl(var(--hue-1), 17%, 63%);
+    --section-padding: 7rem;
+    --bg-color-2: #fff;
+    --bg-color-3: hsl(var(--hue-1), 100%, 98%);
+}
+
+/* ------ General Styling ------ */
+*, *::before, *::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    font-family: "Poppins", sans-serif;
+    color: var(--text-color);
+    overflow-x: hidden;
+}
+
+a { text-decoration: none; }
+ul { list-style: none; }
+
+.container {
+    width: 100%;
+    max-width: 75rem;
+    padding: 0 1.5rem;
+    margin: 0 auto;
+}
+
+/* ------ Header & Navigation ------ */
+header {
+    width: 100%;
+    padding: 1rem 0;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    display: block;
+    transition: 0.3s;
+    background: fixed;
+    background-size: cover;
+}
+
+/* ------ Showcase / Hero Section ------ */
+.showcase-area {
+    padding: 120px 0;
+    display: flex;
+    align-items: center;
+}
+
+.showcase-area .container {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    align-items: center;
+    gap: 2rem;
+}
+
+.sub-heading {
+    color: var(--heading-color);
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    border-left: 3px solid var(--main-color-2);
+    padding-left: 0.75rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.heading {
+    color: var(--heading-color);
+    font-size: 3.5rem;
+    font-family: "Abril Fatface", cursive;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+}
+
+.text {
+    color: var(--text-color);
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.8rem 1.8rem;
+    background-color: var(--main-color-1);
+    color: #fff;
+    border-radius: 50px;
+    font-weight: 500;
+    transition: 0.3s;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: var(--main-color-dark-1);
+    transform: translateY(-3px);
+}
+
+.person {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 30px;
+    box-shadow: 20px 20px 0px var(--main-color-1);
+}
+
+/* ------ Services Section ------ */
+.section { padding: var(--section-padding) 0; }
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.service-card {
+    background: var(--bg-color-2);
+    padding: 3rem 2rem;
+    border-radius: 20px;
+    text-align: center;
+    transition: 0.3s;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.service-card:hover { transform: translateY(-10px); }
+
+.service-card i {
+    font-size: 2.5rem;
+    color: var(--main-color-1);
+    margin-bottom: 1.5rem;
+    display: block;
+}
+
+/* ------ Tech Stack Slider ------ */
+.tech-elevator-horizontal {
+    width: 100%;
+    overflow: hidden;
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+}
+
+.tech-row-horizontal {
+    display: flex;
+    gap: 3rem;
+    width: max-content;
+    animation: scroll 20s linear infinite;
+}
+
+@keyframes scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+.tech-skill {
+    font-size: 2rem;
+    color: var(--main-color-1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.tech-skill::after {
+    content: attr(data-tooltip);
+    font-size: 0.8rem;
+    color: var(--heading-color);
+}
+
+/* ------ Contact Form ------ */
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+}
+
+.form-input {
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    border: 2px solid var(--bg-color);
+    border-radius: 10px;
+    font-family: inherit;
+    outline: none;
+}
+
+.form-input:focus { border-color: var(--main-color-1); }
+
+/* ------ Footer ------ */
+footer {
+    background: #1a1f2e;
+    color: #fff;
+    padding: 5rem 0 2rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 3rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.footer-logo { width: 50px; filter: invert(1); }
+.social-links { display: flex; gap: 1rem; margin-top: 1rem; }
+.social-link { color: #fff; font-size: 1.5rem; }
+
+.footer-bottom {
+    padding-top: 2rem;
+    text-align: center;
+    font-size: 0.8rem;
+    opacity: 0.7;
+}
